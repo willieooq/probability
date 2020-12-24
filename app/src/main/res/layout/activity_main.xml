@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/year_you_live"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="numberDecimal"
+        android:hint="預估年齡"/>
+
+    <TextView
+        android:id="@+id/meet_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="平均每天可以遇到多少人?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_you_live" />
+
+    <EditText
+        android:id = "@+id/world_population"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/people_options"
+        android:inputType="numberDecimal"
+        android:hint="世界人口(億)"/>
+    <Switch
+        android:id="@+id/round_up_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="萌萌魔法！"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/world_population" />
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="相遇的機率 Get! "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
+    <TextView
+        android:id="@+id/prob_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        android:text="相遇機率" />
+
+    <RadioGroup
+        android:id="@+id/people_options"
+        android:checkedButton="@id/option_two_hundred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meet_people"
+        android:orientation="vertical">
+
+
+    <RadioButton
+            android:id="@+id/option_two_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option1" />
+
+        <RadioButton
+            android:id="@+id/option_four_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邊緣人 (400人)" />
+
+        <RadioButton
+            android:id="@+id/option_six_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="普通 (600人)" />
+
+        <RadioButton
+            android:id="@+id/option_eight_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="バカ (800人)" />
+
+        <RadioButton
+            android:id="@+id/option_one_thousand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人生勝利組 (1000人)" />
+
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
